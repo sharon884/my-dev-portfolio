@@ -28,8 +28,8 @@ export default function Portfolio() {
       {/* Header Navigation */}
       <header className="max-w-2xl mx-auto px-6 py-8">
         <nav className="flex items-center justify-between">
-          <div className="text-lg font-bold text-black dark:text-white animate-fade-in">
-           Hey, I'm{portfolioConfig.name} 👋
+          <div className="text-2xl font-bold text-black dark:text-white animate-fade-in">
+           Hey,I'm {portfolioConfig.name} 👋
           </div>
           <div className="flex items-center gap-6 text-sm">
             <button
@@ -77,7 +77,7 @@ export default function Portfolio() {
             </div>
           </div>
 
-          <p className="text-gray-800 dark:text-gray-200 leading-relaxed">
+          <p className="text-gray-800 dark:text-gray-200 leading-relaxed text-sm">
             {portfolioConfig.bio} Currently working on PassGo, an event ticketing platform with real-time features. I
             enjoy building scalable web applications and solving complex problems with clean, efficient code.
           </p>
