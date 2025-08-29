@@ -1,7 +1,7 @@
 const portfolioConfig = {
   name: "Sharon",
   role: "MERN Stack Developer",
-  location: "India",
+  location: "Kochi, Kerala, India",
   bio: "I build modern web applications with React, Next.js, and Node.js. Passionate about creating scalable solutions and seamless user experiences.",
   email: "iamsharonts@gmail.com",
   socials: {
