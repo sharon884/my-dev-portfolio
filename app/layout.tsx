@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${portfolioConfig.name} Portfolio`,
     description: portfolioConfig.bio,
-    // FIX: Use the absolute site URL for OpenGraph and SEO
+  
     url: portfolioConfig.siteUrl || "/", 
     siteName: portfolioConfig.name,
   },
