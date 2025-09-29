@@ -9,9 +9,8 @@ const iconComponentMap: { [key: string]: React.FC<React.SVGProps<SVGSVGElement>>
   GitBranch: GitBranch,       
 }
 
-// Helper function to safely retrieve and render the icon
+
 const getIcon = (iconName: string, className: string) => {
-  // Use the icon from the map, or default to the Code icon if the name isn't found
   const IconComponent = iconComponentMap[iconName] || Code; 
   return <IconComponent className={className} />;
 };
