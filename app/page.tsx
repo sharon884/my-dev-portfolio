@@ -1,4 +1,4 @@
-"use client" // <--- CRITICAL: Ensures this file and its children are client components
+"use client" 
 
 // We need to re-import the necessary components after resolving the definition issue
 import { Hero } from "../components/Hero"
