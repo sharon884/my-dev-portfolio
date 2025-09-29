@@ -4,7 +4,7 @@ const portfolioConfig = {
   location: "Kochi, Kerala, India",
   bio: "I build modern web applications with React, Next.js, and Node.js. Passionate about creating scalable solutions and seamless user experiences.",
   email: "iamsharonts@gmail.com",
-  siteUrl: "https://builtbysharon.site", 
+  siteUrl: "sharon.builtbysharon.site", 
   socials: {
     github: "https://github.com/sharon884",
     linkedin: "https://www.linkedin.com/in/sharon-t-s-78786132a/",
