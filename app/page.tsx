@@ -9,7 +9,6 @@ import { Skills } from "../components/Skills"
 
 import { Navbar } from "../components/Navbar" 
 
-// The Portfolio component is now clean and focuses only on structure.
 export default function Portfolio() {
   
   // NOTE: scrollIntoView logic is now moved inside components/Navbar.tsx
