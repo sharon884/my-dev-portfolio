@@ -61,7 +61,7 @@ export function Projects() {
               ))}
             </div>
 
-            {/* NEW LINK RENDERING LOGIC: Maps over the project.links array */}
+         
             <div className="mt-auto flex flex-col sm:flex-row gap-3">
               {project.links && project.links.map((link, i) => (
                 <Link
@@ -82,7 +82,7 @@ export function Projects() {
                 </Link>
               ))}
             </div>
-            {/* END NEW LINK RENDERING LOGIC */}
+        
 
           </div>
         ))}
