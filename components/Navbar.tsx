@@ -1,11 +1,10 @@
 "use client"
 
 import portfolioConfig from "../portfolio.config"
-// Ensure you import the component by its name: ThemeToggle
 import { ThemeToggle } from "./ThemeToggle" 
 import Link from "next/link"
 
-// Helper function for smooth scrolling
+
 const scrollIntoView = (sectionId: string) => {
   const element = document.getElementById(sectionId)
   if (element) {
