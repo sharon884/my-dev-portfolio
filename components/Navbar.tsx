@@ -1,29 +1,49 @@
-import portfolioConfig from "../portfolio.config"
+"use client"
 
-export default function Navbar() {
-  const links = [
-    { name: "Home", href: "#home" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
-  ]
+import portfolioConfig from "../portfolio.config"
+import { ThemeToggle } from "./ThemeToggle" 
+import Link from "next/link"
+
+
+const scrollIntoView = (sectionId: string) => {
+  const element = document.getElementById(sectionId)
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" })
+  }
+}
+
+export function Navbar() {
+  const links = ["home", "about", "skills", "projects", "contact"]
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo / Name */}
-        <a href="#home" className="text-2xl font-bold text-blue-600">
-          {portfolioConfig.name}
-        </a>
+    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/80 dark:bg-gray-950/80 border-b border-gray-200 dark:border-gray-800">
+      <nav className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+        {/* Logo / Name button */}
+        <div className="text-xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+          <button 
+            onClick={() => scrollIntoView("home")}
+            className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+          >
+            {portfolioConfig.name}
+          </button>
+        </div>
 
         {/* Navigation Links */}
-        <div className="space-x-6 hidden md:flex">
-          {links.map((link) => (
-            <a key={link.name} href={link.href} className="text-gray-700 hover:text-blue-600 transition">
-              {link.name}
-            </a>
+        <div className="flex items-center gap-6 text-sm">
+          {links.map((id) => (
+            <button
+              key={id}
+              onClick={() => scrollIntoView(id)}
+              className="hidden sm:inline-block font-semibold capitalize text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+            >
+              {id}
+            </button>
           ))}
+          
+          {/* Theme Toggle Component */}
+          <ThemeToggle />
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   )
 }
