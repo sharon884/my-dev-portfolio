@@ -10,7 +10,7 @@ const inter = Inter({
   variable: "--font-inter",
 })
 
-// Corrected dynamic metadata using the config file
+
 export const metadata: Metadata = {
   title: `${portfolioConfig.name} - ${portfolioConfig.role}`,
   description: portfolioConfig.bio,
