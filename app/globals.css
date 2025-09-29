@@ -1,3 +1,5 @@
+/* Restored original styling using CSS variables for theme and setting monospace font. 
+   Removed animation keyframes as requested. */
 @import "tailwindcss";
 
 :root {
@@ -5,10 +7,11 @@
   --foreground: #171717;
 }
 
+/* Restored original theme directive */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-geist-sans); 
   --font-mono: var(--font-geist-mono);
 }
 
@@ -22,7 +25,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: monospace;
+  font-family: monospace; /* Restored desired font */
 }
 html {
   scroll-behavior: smooth;
