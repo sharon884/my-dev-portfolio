@@ -1,3 +1,7 @@
+import React, { useState, useEffect } from 'react';
+import { Github, Linkedin, Mail, MapPin, Twitter, ExternalLink, Calendar, Code, Layers, Cloud, Sun, Moon, ArrowRight } from 'lucide-react';
+
+// --- Portfolio Configuration Data ---
 const portfolioConfig = {
   name: "Sharon",
   role: "MERN Stack Developer",
@@ -16,7 +20,7 @@ const portfolioConfig = {
         "Event Ticketing Platform with real-time features, secure payment integration using Razorpay, and comprehensive event management system built with MERN stack.",
       link: "https://github.com/sharon/passgo",
       year: "2025",
-      status: "Ongoing Development", // Updated status for consistency
+      status: "Ongoing Development",
       tags: ["Next.js", "MongoDB", "Razorpay", "TypeScript", "Tailwind CSS"],
     },
     {
@@ -25,7 +29,7 @@ const portfolioConfig = {
         "User Management System with authentication, role-based access control, and admin dashboard. Built with React.js and modern UI components.",
       link: "https://github.com/sharon884/react-ums",
       year: "2025",
-      // Status is omitted here, but tags are added to resolve the error
+      status: "Completed",
       tags: ["React", "Node.js", "Express", "Context API"], 
     },
     {
@@ -34,7 +38,7 @@ const portfolioConfig = {
         "Full-featured streaming platform clone with user authentication, movie browsing, and responsive design using React and Firebase.",
       link: "https://github.com/sharon884/netflix-clone--react",
       year: "2025",
-      status: "Completed", // Added status
+      status: "Completed",
       tags: ["React", "Firebase", "API Integration", "CSS"],
     },
     {
@@ -43,7 +47,7 @@ const portfolioConfig = {
         "Real-time chat application with Socket.IO, featuring instant messaging, user presence indicators, and modern chat interface.",
       link: "https://github.com/sharon884/SocketTalk",
       year: "2025",
-      status: "Completed", // Added status
+      status: "Completed",
       tags: ["React", "Socket.IO", "Node.js", "Real-Time"],
     },
   ],
@@ -54,13 +58,22 @@ const portfolioConfig = {
     "Express.js",
     "MongoDB",
     "TypeScript",
-    "JavaScript",
     "Tailwind CSS",
+    "AWS",
+    "Git",
     "Redux",
     "REST APIs",
-    "Git/GitHub",
-    "Firebase",
+    "WebSockets"
   ],
-}
+};
 
-export default portfolioConfig
+// --- Helper Functions ---
+const scrollIntoView = (sectionId) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
+
+export default {portfolioConfig}

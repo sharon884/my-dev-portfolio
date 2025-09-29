@@ -11,9 +11,9 @@ export function About() {
           Hi, I'm <span className="font-bold text-indigo-600 dark:text-indigo-400">{portfolioConfig.name}</span>. I'm a dedicated **{portfolioConfig.role}** based in {portfolioConfig.location}.
         </p>
         <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-          My passion lies in taking ideas from concept to a polished, performant web application. I specialize in the full MERN stack, ensuring that I can deliver robust server-side architecture and a beautiful, intuitive frontend user experience. I am committed to continuous learning and applying best practices in everything I build.
+          My passion lies in taking ideas from concept to a polished, performant web application. I specialize in the full **MERN stack**, ensuring that I can deliver robust server-side architecture and a beautiful, intuitive frontend user experience. I am committed to continuous learning and applying best practices in everything I build.
         </p>
       </div>
     </section>
-  )
+  );
 }

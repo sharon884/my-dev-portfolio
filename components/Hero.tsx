@@ -2,7 +2,8 @@ import Link from "next/link"
 import { Github, Linkedin, Mail, MapPin,Twitter } from "lucide-react"
 import portfolioConfig from "../portfolio.config"
 
-export function Hero() {
+export // Hero Component
+function Hero() {
   return (
     <section id="home" className="min-h-[calc(100vh-80px)] pt-16 flex items-center justify-center text-center">
       <div className="space-y-8 max-w-2xl">
@@ -19,20 +20,20 @@ export function Hero() {
 
         {/* Action Button and Location */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-          <Link
-            href="#projects"
-            className="px-8 py-3 bg-indigo-600 text-white font-bold rounded-xl shadow-lg hover:bg-indigo-700 transition-all duration-300 transform hover:scale-[1.02] text-lg"
+          <button
+            onClick={() => scrollIntoView("projects")}
+            className="px-8 py-3 bg-indigo-600 text-white font-bold rounded-xl shadow-2xl hover:bg-indigo-700 transition-all duration-300 transform hover:scale-[1.02]"
           >
             View Projects
-          </Link>
-          <p className="text-gray-500 dark:text-gray-400 flex items-center gap-2">
-            <MapPin className="w-5 h-5 text-indigo-500" />
+          </button>
+          <div className="flex items-center text-gray-600 dark:text-gray-400">
+            <MapPin className="w-5 h-5 mr-2 text-indigo-500" />
             {portfolioConfig.location}
-          </p>
+          </div>
         </div>
 
         {/* Social Links */}
-        <div className="flex items-center justify-center gap-6 pt-6">
+        <div className="flex justify-center gap-6 pt-4">
           <a
             href={portfolioConfig.socials.github}
             target="_blank"
@@ -70,5 +71,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

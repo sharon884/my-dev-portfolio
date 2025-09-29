@@ -13,10 +13,10 @@ const scrollIntoView = (sectionId: string) => {
 }
 
 export function Navbar() {
-  const links = ["home", "about", "skills", "projects", "contact"]
+  const links = ["home", "about", "skills", "projects", "contact"];
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/80 dark:bg-gray-950/80 border-b border-gray-200 dark:border-gray-800">
+    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/80 dark:bg-gray-950/80 border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
       <nav className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo / Name button */}
         <div className="text-xl font-extrabold tracking-tight text-gray-900 dark:text-white">
@@ -39,10 +39,9 @@ export function Navbar() {
               {id}
             </button>
           ))}
-          {/* Theme Switcher */}
           <ThemeSwitcher />
         </div>
       </nav>
     </header>
-  )
+  );
 }

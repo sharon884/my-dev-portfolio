@@ -1,9 +1,10 @@
 import portfolioConfig from "../portfolio.config"
 import { Code, Layers, Cloud } from "lucide-react"
 
-export function Skills() {
-  const allSkills = [...portfolioConfig.skills, ...portfolioConfig.skills] // Duplicate for seamless scroll
-  const iconMap: { [key: string]: React.ReactNode } = {
+export / Skills Component
+function Skills() {
+  const allSkills = [...portfolioConfig.skills, ...portfolioConfig.skills]; // Duplicate for seamless scroll
+  const iconMap = {
     "React.js": <Code className="w-5 h-5 text-sky-400" />,
     "Next.js": <Code className="w-5 h-5 text-gray-900 dark:text-white" />,
     "Node.js": <Code className="w-5 h-5 text-green-500" />,
@@ -12,13 +13,30 @@ export function Skills() {
     "TypeScript": <Code className="w-5 h-5 text-blue-500" />,
     "Tailwind CSS": <Code className="w-5 h-5 text-cyan-400" />,
     "AWS": <Cloud className="w-5 h-5 text-orange-500" />,
-  }
+    "Git": <Code className="w-5 h-5 text-red-500" />,
+    "Redux": <Code className="w-5 h-5 text-purple-500" />,
+    "REST APIs": <Code className="w-5 h-5 text-yellow-500" />,
+    "WebSockets": <Code className="w-5 h-5 text-pink-500" />,
+  };
 
   return (
     <section id="skills" className="py-12 md:py-16 border-t border-gray-200 dark:border-gray-800">
       <h2 className="text-4xl font-extrabold mb-10 text-center text-gray-900 dark:text-white tracking-tight">
         My Expertise
       </h2>
+      {/* CSS for infinite scroll animation */}
+      <style>{`
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-scroll {
+          animation: scroll 30s linear infinite;
+        }
+        .group:hover .animate-scroll {
+          animation-play-state: paused;
+        }
+      `}</style>
       <div className="relative overflow-hidden w-full group py-4">
         <div className="flex animate-scroll w-[200%] group-hover:pause">
           {allSkills.map((skill, index) => (
@@ -33,10 +51,7 @@ export function Skills() {
             </div>
           ))}
         </div>
-        {/* Fade overlays for effect */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/12 bg-gradient-to-r from-white dark:from-gray-950"></div>
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/12 bg-gradient-to-l from-white dark:from-gray-950"></div>
       </div>
     </section>
-  )
+  );
 }
