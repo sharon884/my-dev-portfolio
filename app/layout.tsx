@@ -39,11 +39,7 @@ export default function RootLayout({
   return (
     // FIX: Using suppressHydrationWarning is necessary when manually adding a class to HTML
     <html lang="en" suppressHydrationWarning className={inter.variable}>
-      {/* FIX: The script for theme initialization is moved inside the <body> 
-        before the children, using native React embedding. This is the correct 
-        way to ensure the script runs immediately to prevent FOUC without 
-        triggering the Next.js script rendering error.
-      */}
+   
       <body className="font-sans antialiased min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100">
         <script
           id="theme-script"
