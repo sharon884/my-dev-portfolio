@@ -1,6 +1,5 @@
 "use client" 
 
-// We need to re-import the necessary components after resolving the definition issue
 import { Hero } from "../components/Hero"
 import { Projects } from "../components/Projects"
 import { About } from "../components/About"
