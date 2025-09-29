@@ -7,7 +7,6 @@ import { Contact } from "../components/Contact"
 import { Footer } from "../components/Footer"
 import { Skills } from "../components/Skills"
 
-// Import the Navbar from its own file (you should have created this in components/Navbar.tsx)
 import { Navbar } from "../components/Navbar" 
 
 // The Portfolio component is now clean and focuses only on structure.
