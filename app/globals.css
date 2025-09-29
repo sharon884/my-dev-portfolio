@@ -1,5 +1,4 @@
-/* Restored original styling using CSS variables for theme and setting monospace font. 
-   Removed animation keyframes as requested. */
+
 @import "tailwindcss";
 
 :root {
