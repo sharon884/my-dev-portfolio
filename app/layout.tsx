@@ -14,7 +14,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: `${portfolioConfig.name} - ${portfolioConfig.role}`,
   description: portfolioConfig.bio,
-  // Add other crucial SEO tags
+
   openGraph: {
     title: `${portfolioConfig.name} Portfolio`,
     description: portfolioConfig.bio,
