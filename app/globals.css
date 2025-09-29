@@ -41,13 +41,13 @@ html {
   }
 }
 
-/* Add or update the utility class to apply the animation */
+
 .animate-scroll {
-  /* Apply the animation: 'scroll' keyframes, duration (e.g., 60s), linear speed, infinite loop */
+  
   animation: scroll 100s linear infinite;
 }
 
-/* Optional: Utility to pause the animation on hover */
+
 .group:hover .group-hover\:pause {
   animation-play-state: paused;
 }
