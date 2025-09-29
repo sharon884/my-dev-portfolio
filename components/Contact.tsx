@@ -1,3 +1,5 @@
+// components/Contact.tsx
+
 import portfolioConfig from "../portfolio.config"
 import { Mail, ArrowRight } from "lucide-react"
 import Link from "next/link"
@@ -9,7 +11,7 @@ export function Contact() {
         Get In Touch
       </h2>
       <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-xl mx-auto">
-        I’m currently open to new opportunities. Let’s build something great together.
+        I&apos;m currently open to new opportunities. Let&apos;s build something great together.
       </p>
 
       <Link

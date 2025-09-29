@@ -2,8 +2,6 @@
 
 import portfolioConfig from "../portfolio.config"
 import { ThemeToggle } from "./ThemeToggle" 
-import Link from "next/link"
-
 
 const scrollIntoView = (sectionId: string) => {
   const element = document.getElementById(sectionId)

@@ -7,7 +7,7 @@ export function Hero() {
     <section id="home" className="min-h-[calc(100vh-80px)] pt-16 flex items-center justify-center text-center">
       <div className="space-y-8 max-w-2xl">
         <p className="text-xl font-medium text-indigo-600 dark:text-indigo-400">
-          Hello, I'm {portfolioConfig.name} 👋
+          Hello, I&apos;m {portfolioConfig.name} 👋
         </p>
         <h1 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tighter text-gray-900 dark:text-white transition-colors duration-300">
           <span className="text-indigo-600 dark:text-indigo-400">{portfolioConfig.role}</span>

@@ -9,8 +9,9 @@ const iconComponentMap: { [key: string]: React.FC<React.SVGProps<SVGSVGElement>>
   GitBranch: GitBranch,       
 }
 
-
+// Helper function to safely retrieve and render the icon
 const getIcon = (iconName: string, className: string) => {
+  // Use the icon from the map, or default to the Code icon if the name isn't found
   const IconComponent = iconComponentMap[iconName] || Code; 
   return <IconComponent className={className} />;
 };
@@ -61,7 +62,7 @@ export function Projects() {
               ))}
             </div>
 
-         
+            {/* NEW LINK RENDERING LOGIC: Maps over the project.links array */}
             <div className="mt-auto flex flex-col sm:flex-row gap-3">
               {project.links && project.links.map((link, i) => (
                 <Link
@@ -82,7 +83,7 @@ export function Projects() {
                 </Link>
               ))}
             </div>
-        
+            {/* END NEW LINK RENDERING LOGIC */}
 
           </div>
         ))}
