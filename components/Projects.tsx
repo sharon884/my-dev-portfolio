@@ -4,9 +4,9 @@ import Link from "next/link"
 
 
 const iconComponentMap: { [key: string]: React.FC<React.SVGProps<SVGSVGElement>> } = {
-  ExternalLink: ExternalLink, // For Live Site links
-  Code: Code,                 // For GitHub/Code Repository links
-  GitBranch: GitBranch,       // In case you want another icon for a specific repo
+  ExternalLink: ExternalLink, 
+  Code: Code,                 
+  GitBranch: GitBranch,       
 }
 
 // Helper function to safely retrieve and render the icon
