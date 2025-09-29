@@ -32,12 +32,11 @@ html {
 
 @keyframes scroll {
   from {
-    /* Start the element at its normal position */
+   
     transform: translateX(0);
   }
   to {
-    /* Move the element left by exactly half its width (which is the length of one set of skills) */
-    /* Since the content is duplicated (w-[200%]), we move it by -50% to create a seamless loop */
+  
     transform: translateX(-50%);
   }
 }
