@@ -37,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    // FIX: Using suppressHydrationWarning is necessary when manually adding a class to HTML
+
     <html lang="en" suppressHydrationWarning className={inter.variable}>
    
       <body className="font-sans antialiased min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100">
