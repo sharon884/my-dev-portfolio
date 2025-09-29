@@ -2,7 +2,9 @@ import portfolioConfig from "../portfolio.config"
 import { Code, Layers, Cloud } from "lucide-react"
 
 export function Skills() {
-  const allSkills = [...portfolioConfig.skills, ...portfolioConfig.skills] // Duplicate for seamless scroll
+  // CRITICAL: Duplicating the array ensures a seamless, infinite loop when scrolling.
+  const allSkills = [...portfolioConfig.skills, ...portfolioConfig.skills] 
+  
   const iconMap: { [key: string]: React.ReactNode } = {
     "React.js": <Code className="w-5 h-5 text-sky-400" />,
     "Next.js": <Code className="w-5 h-5 text-gray-900 dark:text-white" />,
@@ -19,7 +21,9 @@ export function Skills() {
       <h2 className="text-4xl font-extrabold mb-10 text-center text-gray-900 dark:text-white tracking-tight">
         My Expertise
       </h2>
+      {/* Outer container: Sets the stage for the animation. 'overflow-hidden' hides the off-screen content. */}
       <div className="relative overflow-hidden w-full group py-4">
+        {/* Inner container: Applies the animation class and defines the necessary width for the loop. */}
         <div className="flex animate-scroll w-[200%] group-hover:pause">
           {allSkills.map((skill, index) => (
             <div
@@ -33,7 +37,7 @@ export function Skills() {
             </div>
           ))}
         </div>
-        {/* Fade overlays for effect */}
+        {/* Fade overlays for a smoother visual effect */}
         <div className="pointer-events-none absolute inset-y-0 left-0 w-1/12 bg-gradient-to-r from-white dark:from-gray-950"></div>
         <div className="pointer-events-none absolute inset-y-0 right-0 w-1/12 bg-gradient-to-l from-white dark:from-gray-950"></div>
       </div>

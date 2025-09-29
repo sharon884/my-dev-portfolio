@@ -1,6 +1,22 @@
 import portfolioConfig from "../portfolio.config"
-import { ExternalLink, Calendar, Code } from "lucide-react"
+// Import all necessary icons for project links
+import { ExternalLink, Calendar, Code, GitBranch } from "lucide-react" 
 import Link from "next/link"
+
+// Define a map to select the correct Lucide icon based on the string name
+const iconComponentMap: { [key: string]: React.FC<React.SVGProps<SVGSVGElement>> } = {
+  ExternalLink: ExternalLink, // For Live Site links
+  Code: Code,                 // For GitHub/Code Repository links
+  GitBranch: GitBranch,       // In case you want another icon for a specific repo
+}
+
+// Helper function to safely retrieve and render the icon
+const getIcon = (iconName: string, className: string) => {
+  // Use the icon from the map, or default to the Code icon if the name isn't found
+  const IconComponent = iconComponentMap[iconName] || Code; 
+  return <IconComponent className={className} />;
+};
+
 
 export function Projects() {
   return (
@@ -9,6 +25,7 @@ export function Projects() {
         Featured Projects
       </h2>
       <div className="grid md:grid-cols-2 gap-8">
+        {/* Map over all projects defined in portfolioConfig */}
         {portfolioConfig.projects.map((project, index) => (
           <div
             key={index}
@@ -46,15 +63,29 @@ export function Projects() {
               ))}
             </div>
 
-            <Link
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-auto inline-flex items-center justify-center w-full sm:w-auto px-5 py-2 border border-indigo-500 text-indigo-600 dark:text-indigo-400 font-semibold rounded-xl hover:bg-indigo-50 dark:hover:bg-gray-800 transition-colors duration-300"
-            >
-              <ExternalLink className="w-4 h-4 mr-2" />
-              View on GitHub
-            </Link>
+            {/* NEW LINK RENDERING LOGIC: Maps over the project.links array */}
+            <div className="mt-auto flex flex-col sm:flex-row gap-3">
+              {project.links && project.links.map((link, i) => (
+                <Link
+                  key={i}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  // Dynamically adjust button styling: Primary for Live Site, Secondary for Repos
+                  className={`inline-flex items-center justify-center px-4 py-2 border font-semibold rounded-xl transition-colors duration-300 ${
+                    link.icon === 'ExternalLink' 
+                      ? "text-white bg-indigo-600 border-indigo-600 hover:bg-indigo-700 hover:border-indigo-700 shadow-md" // Primary button for live site
+                      : "text-indigo-600 dark:text-indigo-400 border-indigo-500 hover:bg-indigo-50 dark:hover:bg-gray-800" // Secondary button for repos
+                  }`}
+                >
+                  {/* Render the icon dynamically */}
+                  {getIcon(link.icon, "w-4 h-4 mr-2")} 
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+            {/* END NEW LINK RENDERING LOGIC */}
+
           </div>
         ))}
       </div>

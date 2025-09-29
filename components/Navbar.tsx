@@ -1,7 +1,8 @@
 "use client"
 
 import portfolioConfig from "../portfolio.config"
-import ThemeSwitcher from "./ThemeSwitcher" // Assuming ThemeSwitcher is in the same directory
+// Ensure you import the component by its name: ThemeToggle
+import { ThemeToggle } from "./ThemeToggle" 
 import Link from "next/link"
 
 // Helper function for smooth scrolling
@@ -39,8 +40,9 @@ export function Navbar() {
               {id}
             </button>
           ))}
-          {/* Theme Switcher */}
-          <ThemeSwitcher />
+          
+          {/* Theme Toggle Component */}
+          <ThemeToggle />
         </div>
       </nav>
     </header>

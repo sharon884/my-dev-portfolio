@@ -18,8 +18,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${portfolioConfig.name} Portfolio`,
     description: portfolioConfig.bio,
-    url: "/",
+    // FIX: Use the absolute site URL for OpenGraph and SEO
+    url: portfolioConfig.siteUrl || "/", 
     siteName: portfolioConfig.name,
+  },
+  // Recommended: Add Twitter metadata
+  twitter: {
+    card: "summary_large_image",
+    title: `${portfolioConfig.name} Portfolio`,
+    description: portfolioConfig.bio,
+    creator: portfolioConfig.socials?.twitter,
   },
 }
 
