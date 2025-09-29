@@ -10,10 +10,7 @@ import { Skills } from "../components/Skills"
 import { Navbar } from "../components/Navbar" 
 
 export default function Portfolio() {
-  
-  // NOTE: scrollIntoView logic is now moved inside components/Navbar.tsx
-  // NOTE: The inner Navbar definition is removed
-  
+    
   return (
     <div className="min-h-screen">
       <Navbar /> 
