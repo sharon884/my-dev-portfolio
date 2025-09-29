@@ -1,5 +1,4 @@
 // components/ThemeToggle.tsx
-
 "use client"
 
 import React, { useState, useEffect } from 'react'
@@ -8,7 +7,6 @@ import { Sun, Moon } from 'lucide-react'
 /**
  * Utility function to handle the actual application of the 'dark' class
  * to the root HTML element, which Tailwind CSS uses for theme switching.
- * @param theme - 'light' or 'dark'
  */
 const applyTheme = (theme: 'light' | 'dark') => {
   if (theme === 'dark') {
@@ -19,11 +17,11 @@ const applyTheme = (theme: 'light' | 'dark') => {
 }
 
 export function ThemeToggle() {
-  // 1. Initialize state. useEffect will determine the actual initial value.
+  // 1. Initialize state.
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
 
   useEffect(() => {
-    // 2. Read the user's preference from localStorage or system settings.
+    // 2. Read the user's preference from localStorage or system settings on mount.
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
     
@@ -37,15 +35,15 @@ export function ThemeToggle() {
 
     // Set React state and apply the class to ensure everything is synced
     setTheme(initialTheme);
-    applyTheme(initialTheme); 
-  }, [])
+    applyTheme(initialTheme); // 👈 Applies the class on initial load/hydration
+  }, []) // Empty dependency array ensures this runs only once
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light'
     
-    setTheme(newTheme) // Update React state
-    localStorage.setItem('theme', newTheme) // Save the user's new preference
-    applyTheme(newTheme) // Immediately update the <html> tag
+    setTheme(newTheme) // Updates React state
+    localStorage.setItem('theme', newTheme) // Saves the user's preference
+    applyTheme(newTheme) // 👈 APPLIES THE CLASS ON CLICK
   }
 
   return (
@@ -54,13 +52,13 @@ export function ThemeToggle() {
       aria-label={theme === 'dark' ? "Switch to Light Mode" : "Switch to Dark Mode"}
       className="p-2 rounded-full transition-colors duration-200 
                  text-gray-700 dark:text-gray-300 
-                 hover:bg-gray-200 dark:hover:bg-gray-800"
+                 hover:bg-gray-200 dark:hover:bg-gray-800 
+                 transform hover:scale-110"
     >
-      {/* Conditionally render Sun (for dark mode) or Moon (for light mode) */}
       {theme === 'dark' ? (
-        <Sun className="w-5 h-5 text-amber-400" />
+        <Sun className="w-6 h-6 text-yellow-400" />
       ) : (
-        <Moon className="w-5 h-5 text-indigo-600" />
+        <Moon className="w-6 h-6 text-indigo-600" />
       )}
     </button>
   )

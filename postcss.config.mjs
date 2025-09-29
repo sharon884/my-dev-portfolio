@@ -1,5 +1,11 @@
+// ./postcss.config.mjs
+
 const config = {
-  plugins: ["@tailwindcss/postcss"],
+  plugins: {
+    // 🛑 Standard Next.js/Tailwind plugins
+    'tailwindcss': {},
+    'autoprefixer': {},
+  },
 };
 
 export default config;

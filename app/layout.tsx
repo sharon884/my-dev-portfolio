@@ -1,4 +1,4 @@
-
+// app/layout.tsx
 
 import type React from "react"
 import type { Metadata } from "next"
@@ -19,38 +19,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${portfolioConfig.name} Portfolio`,
     description: portfolioConfig.bio,
-    url: portfolioConfig.siteUrl || "/", // Uses https://builtbysharon.site
+    url: portfolioConfig.siteUrl || "/",
     siteName: portfolioConfig.name,
   },
 }
 
-// CRITICAL FIX: The FOUC script is extracted here to be inserted into <head>
-const ThemeInitializerScript = (
-  <script
-    id="theme-script"
-    dangerouslySetInnerHTML={{
-      __html: `
-        (function() {
-          const savedTheme = localStorage.getItem('theme');
-          let theme = 'light';
-
-          if (savedTheme) {
-            theme = savedTheme;
-          } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            theme = 'dark';
-          }
-
-          if (theme === 'dark') {
-            document.documentElement.classList.add('dark');
-          } else {
-            document.documentElement.classList.remove('dark');
-          }
-        })();
-      `,
-    }}
-  />
-);
-
+// 🛑 IMPORTANT: The ThemeInitializerScript variable is REMOVED from here. 🛑
 
 export default function RootLayout({
   children,
@@ -60,10 +34,35 @@ export default function RootLayout({
   return (
     // suppressHydrationWarning is necessary when manually adding a class to HTML
     <html lang="en" suppressHydrationWarning className={inter.variable}>
-      {/* PLACE THE FOUC SCRIPT HERE: Runs before the body is rendered */}
-      {ThemeInitializerScript} 
-      
+      {/* ✅ CORRECT FIX: The FOUC script is placed as the first child of <body>. 
+        This resolves the "Cannot render a sync or defer <script> outside the main document" error.
+      */}
       <body className="font-sans antialiased min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100">
+        <script
+          id="theme-script"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const savedTheme = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                let theme = 'light';
+
+                if (savedTheme) {
+                  theme = savedTheme;
+                } else if (prefersDark) {
+                  theme = 'dark';
+                }
+
+                if (theme === 'dark') {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              })();
+            `,
+          }}
+        />
+        
         {children}
       </body>
     </html>
