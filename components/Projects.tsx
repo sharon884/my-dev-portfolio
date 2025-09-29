@@ -1,5 +1,4 @@
 import portfolioConfig from "../portfolio.config"
-// Import all necessary icons for project links
 import { ExternalLink, Calendar, Code, GitBranch } from "lucide-react" 
 import Link from "next/link"
 
