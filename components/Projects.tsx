@@ -2,7 +2,7 @@ import portfolioConfig from "../portfolio.config"
 import { ExternalLink, Calendar, Code, GitBranch } from "lucide-react" 
 import Link from "next/link"
 
-// Define a map to select the correct Lucide icon based on the string name
+
 const iconComponentMap: { [key: string]: React.FC<React.SVGProps<SVGSVGElement>> } = {
   ExternalLink: ExternalLink, // For Live Site links
   Code: Code,                 // For GitHub/Code Repository links
