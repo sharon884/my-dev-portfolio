@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: portfolioConfig.siteUrl || "/", 
     siteName: portfolioConfig.name,
   },
-  // Recommended: Add Twitter metadata
+ 
   twitter: {
     card: "summary_large_image",
     title: `${portfolioConfig.name} Portfolio`,
