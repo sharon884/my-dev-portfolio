@@ -2,7 +2,7 @@ import portfolioConfig from "../portfolio.config"
 import { Code, Layers, Cloud } from "lucide-react"
 
 export function Skills() {
-  // CRITICAL: Duplicating the array ensures a seamless, infinite loop when scrolling.
+ 
   const allSkills = [...portfolioConfig.skills, ...portfolioConfig.skills] 
   
   const iconMap: { [key: string]: React.ReactNode } = {
