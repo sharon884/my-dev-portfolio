@@ -29,7 +29,7 @@ body {
 html {
   scroll-behavior: smooth;
 }
-/* Add this to your existing CSS file (globals.css) */
+
 @keyframes scroll {
   from {
     /* Start the element at its normal position */
