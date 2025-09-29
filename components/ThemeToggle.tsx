@@ -37,7 +37,6 @@ export function ThemeToggle() {
 
     // Set React state and apply the class to ensure everything is synced
     setTheme(initialTheme);
-    // NOTE: The FOUC script in layout.tsx runs first, but this ensures state is correct.
     applyTheme(initialTheme); 
   }, [])
 
